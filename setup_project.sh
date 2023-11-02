@@ -42,6 +42,11 @@ repos:
 	hooks:
 	  - id: mypy
 		additional_dependencies: ['types-requests']
+  - repo: https://github.com/asottile/reorder-python-imports
+    rev: v3.12.0
+    hooks:
+    -   id: reorder-python-imports
+        args: [--py310-plus, --add-import, 'from __future__ import annotations']
 EOT
 
 cat <<EOT > .flake8  
